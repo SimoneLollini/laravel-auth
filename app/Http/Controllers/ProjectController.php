@@ -15,7 +15,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('admin.project.index');
+        $projects = Project::all();
+        return view('admin.project.index', compact('projects'));
     }
 
     /**
@@ -25,7 +26,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.project.create');
     }
 
     /**
@@ -36,7 +37,9 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+        $val_data = $request->validated();
+        $newProject = Project::create($val_data);
+        return to_route('project.index')->with('message', "$newProject->title added!");
     }
 
     /**
