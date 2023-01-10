@@ -26,7 +26,7 @@
 
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <input type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" aria-describedby="descriptionHlper" value="{{ old('description') }}">
+            <textarea type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" aria-describedby="descriptionHlper" value="{{ old('description') }}"></textarea>
             <small id=" descriptionHlper" class="text-muted">Add Project description here</small>
         </div>
 

@@ -26,6 +26,7 @@
         <div class=" wrapper py-3">
             <label for="description">Description</label>
             <input type="text" name="description" id="description" value="{{old('description', $project->description)}}">
+            <textarea type="text" name="description" id="description" class="form-control @error('description') is-invalid @enderror" aria-describedby="descriptionHlper" value="{{ old('description',$project->description) }}"></textarea>
         </div>
 
         <input type="submit" value="Submit">
