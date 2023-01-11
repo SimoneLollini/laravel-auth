@@ -9,6 +9,7 @@
                 <tr>
                     <th scope="col">Title</th>
                     <th scope="col">Description</th>
+                    <th scope="col">Slug</th>
                     <th scope="col">Tools</th>
                 </tr>
             </thead>
@@ -17,6 +18,7 @@
                 <tr class="">
                     <td scope="row">{{$project->title}}</td>
                     <td> {{$project->description}}</td>
+                    <td> {{$project->slug}}</td>
                     <td class="d-flex">
                         <a class="btn btn-success m-3 w-75" href="{{route('project.show', $project->id)}}">Details</a>
                         <a class="btn btn-warning m-3 w-75" href="{{route('project.edit', $project->id)}}">Edit</a>

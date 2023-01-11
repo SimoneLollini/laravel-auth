@@ -38,6 +38,9 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $val_data = $request->validated();
+        $project_slug = Project::generateSlug($val_data['title']);
+        $val_data['slug'] = $project_slug;
+        // dd($val_data);
         $newProject = Project::create($val_data);
         return to_route('project.index')->with('message', "$newProject->title added!");
     }
