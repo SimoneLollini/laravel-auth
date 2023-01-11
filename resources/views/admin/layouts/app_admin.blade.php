@@ -84,7 +84,7 @@
                         <div class="position-sticky pt-3 sidebar-sticky">
                             <ul class="nav flex-column">
                                 <li class="nav-item py-1">
-                                    <a class="nav-link  d-inline" aria-current="page" href="#">
+                                    <a class="nav-link  d-inline" aria-current="page" href="{{route('dashboard')}}">
                                         <span data-feather="file" class="align-text-bottom">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer" viewBox="0 0 16 16">
                                                 <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z" />
@@ -95,7 +95,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item py-1">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="{{route('project.index')}}">
                                         <span data-feather="file" class="align-text-bottom">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -111,7 +111,9 @@
 
                     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                            <h1 class="h2">Dashboard</h1>
+                            <h2>
+                                @yield('title')
+                            </h2>
                             <div class="btn-toolbar mb-2 mb-md-0">
                             </div>
                         </div>

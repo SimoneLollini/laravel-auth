@@ -1,6 +1,9 @@
 @extends('admin.layouts.app_admin')
 
 @section('content')
+@section('title')
+Tools
+@endsection
 <div class="container">
     <a class="btn btn-warning m-3" href="{{route('project.create')}}">Add</a>
     <div class="table-responsive">
