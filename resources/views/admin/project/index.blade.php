@@ -36,8 +36,8 @@ Tools
                     <td> {{$project->description}}</td>
                     <td> {{$project->slug}}</td>
                     <td class="d-flex">
-                        <a class="btn btn-primary m-3 w-75" href="{{route('project.show', $project->id)}}">Details</a>
-                        <a class="btn btn-primary m-3 w-75" href="{{route('project.edit', $project->id)}}">Edit</a>
+                        <a class="btn btn-primary m-3 w-75" href="{{route('project.show', $project->slug)}}">Details</a>
+                        <a class="btn btn-primary m-3 w-75" href="{{route('project.edit', $project->slug)}}">Edit</a>
                         <form action="{{route('project.destroy', $project->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
