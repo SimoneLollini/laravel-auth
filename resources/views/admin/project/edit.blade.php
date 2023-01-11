@@ -10,7 +10,7 @@
     </ul>
 </div>
 @endif
-<form method="POST" action="{{ route('project.update',$project->id )}}">
+<form method="POST" action="{{ route('project.update',$project->slug )}}">
 
     @csrf
 

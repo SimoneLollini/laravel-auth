@@ -38,7 +38,7 @@ Tools
                     <td class="d-flex">
                         <a class="btn btn-primary m-3 w-75" href="{{route('project.show', $project->slug)}}">Details</a>
                         <a class="btn btn-primary m-3 w-75" href="{{route('project.edit', $project->slug)}}">Edit</a>
-                        <form action="{{route('project.destroy', $project->id)}}" method="POST">
+                        <form action="{{route('project.destroy', $project->slug)}}" method="POST">
                             @csrf
                             @method('DELETE')
                             <input class="btn btn-primary m-3 w-75" type="submit" value="Delete">
@@ -46,7 +46,7 @@ Tools
                     </td>
                 </tr>
                 @empty
-                <p>Ancora nessun fumetto!</p>
+                <p>Ancora nessun progetto!</p>
                 @endforelse
             </tbody>
         </table>
