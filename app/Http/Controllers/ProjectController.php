@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -38,6 +39,12 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $val_data = $request->validated();
+        if ($request->hasFile('image')) {
+            $image = Storage::put('uploads', $val_data['image']);
+            //dd($image);
+            // replace the value of cover_image inside $val_data
+            $val_data['image'] = $image;
+        }
         $project_slug = Project::generateSlug($val_data['title']);
         $val_data['slug'] = $project_slug;
         // dd($val_data);

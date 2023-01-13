@@ -18,12 +18,13 @@ Tools
 </div>
 @endif
 <div class="container">
-    <a class="btn btn-primary m-3" href="{{route('project.create')}}">Add</a>
+    <a class="btn btn-primary btn-sm m-3" href="{{route('project.create')}}">Add</a>
     <div class="table-responsive">
         <table class="table table-primary">
             <thead>
                 <tr>
                     <th scope="col">Title</th>
+                    <th scope="col">image</th>
                     <th scope="col">Description</th>
                     <th scope="col">Slug</th>
                     <th scope="col">Tools</th>
@@ -33,15 +34,16 @@ Tools
                 @forelse ($projects as $project)
                 <tr class="">
                     <td scope="row">{{$project->title}}</td>
+                    <td> <img src="{{asset('storage/' . $project->image)}}" alt="no img"></td>
                     <td> {{$project->description}}</td>
                     <td> {{$project->slug}}</td>
                     <td class="d-flex">
-                        <a class="btn btn-primary m-3 w-75" href="{{route('project.show', $project->slug)}}">Details</a>
-                        <a class="btn btn-primary m-3 w-75" href="{{route('project.edit', $project->slug)}}">Edit</a>
+                        <a class="btn btn-primary btn-sm m-3 w-75" href="{{route('project.show', $project->slug)}}">Details</a>
+                        <a class="btn btn-primary btn-sm m-3 w-75" href="{{route('project.edit', $project->slug)}}">Edit</a>
                         <form action="{{route('project.destroy', $project->slug)}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <input class="btn btn-primary m-3 w-75" type="submit" value="Delete">
+                            <input class="btn btn-primary btn-sm m-3 w-75" type="submit" value="Delete">
                         </form>
                     </td>
                 </tr>
